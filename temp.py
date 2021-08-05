@@ -3,16 +3,18 @@
 from PIL import Image
 import numpy as np
 
-
-img = Image.open('tree(2).png').convert('L') #monocrome
+#read in image
+img = Image.open('tree(2).png').convert('L') #inout image is 10x10 and converted into monocrome
 img.save('result1.png')
 
 image_array = np.array(img)
 
 print (image_array)
 
-#image = np.random.rand(10,10) #10x10 matrix
-# z= range(8)
+#establishing Kernal and strides
+#establish output matrix using (n-f+1) x (n-f+1)
+#i.e. n is dimentional, f is kernal size in same direction as dim
+
 Kernel= np.array([[1,0,-1],[2,0,-2],[3,0,-3]])
 stride=1
 output = np.zeros((8,8))
