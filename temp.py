@@ -21,10 +21,12 @@ output = np.zeros((8,8))
 B0 = image_array[0:3,0:3]
 k=0
 for i in range(8):
-# B = image_array[0:3,0+i:3+i]
-for j in range(8):
-C = image[0+j:3+j,0+i:3+i]
-piece_wise_multi = np.multiply(C,Kernel)
+    B = image_array[0:3,0+i:3+i]
+    for j in range(8):
+            C = image_array[0+j:3+j,0+i:3+i]
+            piece_wise_multi = np.multiply(C,Kernel)
 # while k < len(z):
 output[i,j]=np.sum(piece_wise_multi)
+
+print(output)
 
